@@ -1,9 +1,13 @@
+import andre from '../assets/andre-siqueira.webp'
+import helena from '../assets/helena-duarte.webp'
+import ricardo from '../assets/ricardo-valmont.webp'
+
 export const navLinks = [
-  { href: '#manifesto', label: 'Escritório' },
-  { href: '#atuacao', label: 'Atuação' },
-  { href: '#socios', label: 'Sócios' },
-  { href: '#insights', label: 'Insights' },
-  { href: '#contato', label: 'Contato' },
+  { href: '/#manifesto', label: 'Escritório' },
+  { href: '/#atuacao', label: 'Atuação' },
+  { href: '/#socios', label: 'Sócios' },
+  { href: '/#insights', label: 'Insights' },
+  { href: '/#contato', label: 'Contato' },
 ]
 
 export const marquee = [
@@ -31,13 +35,13 @@ export const areas = [
 ]
 
 export const partners = [
-  { name: 'Ricardo Valmont', role: 'Fundador', area: 'Societário e M&A · Governança' },
-  { name: 'Helena Duarte', role: 'Sócia', area: 'Tributário · Patrimônio' },
-  { name: 'André Siqueira', role: 'Sócio', area: 'Contencioso e Arbitragem' },
+  { name: 'Ricardo Valmont', role: 'Fundador', area: 'Societário e M&A · Governança', photo: ricardo },
+  { name: 'Helena Duarte', role: 'Sócia', area: 'Tributário · Patrimônio', photo: helena },
+  { name: 'André Siqueira', role: 'Sócio', area: 'Contencioso e Arbitragem', photo: andre },
 ]
 
-export const posts = [
-  { cat: 'Tributário', date: '18.09.2026', title: 'Reforma tributária: o que muda para grupos econômicos' },
-  { cat: 'Societário', date: '02.09.2026', title: 'Governança em empresas familiares: o papel do conselho' },
-  { cat: 'Compliance', date: '21.08.2026', title: 'Investigações internas e a responsabilidade dos administradores' },
-]
+export const contact = {
+  phone: '+55 11 99000-0000',
+  email: 'contato@valmontadvogados.com.br',
+  whatsapp: `https://wa.me/5511990000000?text=${encodeURIComponent('Olá! Vim pelo site e gostaria de agendar uma conversa.')}`,
+}

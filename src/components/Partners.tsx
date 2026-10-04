@@ -19,9 +19,9 @@ export default function Partners() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-10">
           {partners.map((p, i) => (
             <article key={i} className={`flex flex-col ${i === 1 ? 'pt-16' : ''}`}>
-              <div className="relative flex aspect-[3/4] items-end justify-center rounded-t-full bg-green pb-7">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-t-full bg-green">
+                <img src={p.photo} alt={`Retrato de ${p.name}`} loading="lazy" className="absolute inset-0 size-full object-cover" />
                 <div className="absolute inset-[12px_12px_0] rounded-t-full border border-b-0 border-brass/45" />
-                <span className="relative text-[11px] tracking-[0.28em] text-cream/60 uppercase">[Retrato]</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-ink/16 py-6">
                 <div>

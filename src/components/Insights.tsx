@@ -1,6 +1,6 @@
-import { posts } from '../data/content'
+import { posts } from '../data/posts'
 
-export default function Insights() {
+export default function Insights({ all = false }: { all?: boolean }) {
   return (
     <section id="insights" className="bg-sand">
       <div className="mx-auto max-w-[1360px] px-10 py-35">
@@ -11,14 +11,16 @@ export default function Insights() {
               Pensamento <em className="text-bronze">jurídico</em>.
             </h2>
           </div>
-          <a href="#insights" className="inline-flex min-h-12 items-center border-b border-ink text-sm font-medium">
-            Ver todas as publicações
-          </a>
+          {!all && (
+            <a href="/artigos" className="inline-flex min-h-12 items-center border-b border-ink text-sm font-medium">
+              Ver todas as publicações
+            </a>
+          )}
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-          {posts.map((post) => (
-            <a key={post.title} href="#insights" className="flex min-h-[380px] flex-col gap-7 rounded bg-cream p-9">
+          {(all ? posts : posts.slice(0, 3)).map((post) => (
+            <a key={post.slug} href={`/artigos/${post.slug}`} className="flex min-h-[380px] flex-col gap-7 rounded bg-cream p-9">
               <div className="flex justify-between text-[13px] text-muted">
                 <span className="rounded-full border border-ink/25 px-3.5 py-1.5 text-ink">{post.cat}</span>
                 <span>{post.date}</span>

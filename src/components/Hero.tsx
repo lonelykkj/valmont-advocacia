@@ -1,24 +1,11 @@
-import { marquee, navLinks } from '../data/content'
-import ArrowIcon from './ArrowIcon'
+import sede from '../assets/sede.webp'
+import { marquee } from '../data/content'
+import Header from './Header'
 
 export default function Hero() {
   return (
     <section id="topo" className="relative bg-green text-cream">
-      <header className="mx-auto flex max-w-[1360px] flex-wrap items-center justify-between gap-5 px-10 py-7">
-        <a href="#topo" className="flex items-baseline gap-3">
-          <span className="font-serif text-[30px] tracking-[0.02em]">Valmont</span>
-          <span className="text-[11px] tracking-[0.4em] text-brass uppercase">Advogados</span>
-        </a>
-        <nav aria-label="Principal" className="flex flex-wrap gap-x-9 gap-y-2 text-sm">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href}>{l.label}</a>
-          ))}
-        </nav>
-        <a href="#contato" className="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-cream px-[26px] text-sm font-medium text-green">
-          Agende uma reunião
-          <ArrowIcon />
-        </a>
-      </header>
+      <Header />
 
       <div className="mx-auto flex max-w-[1360px] flex-wrap items-end gap-12 px-10 pt-16">
         <div className="min-w-0 flex-[999_1_640px] pb-10">
@@ -46,10 +33,9 @@ export default function Hero() {
         </div>
 
         <div className="relative ml-auto max-w-[460px] min-w-0 flex-[1_1_380px]">
-          <div className="relative flex aspect-[3/4.3] items-end justify-center overflow-hidden rounded-t-full bg-deep pb-10">
+          <div className="relative aspect-[3/4.3] overflow-hidden rounded-t-full bg-deep">
+            <img src={sede} alt="Fachada do edifício da sede" className="absolute inset-0 size-full object-cover" />
             <div className="absolute inset-[18px_18px_0] rounded-t-full border border-b-0 border-brass/50" />
-            <div className="absolute top-[38%] left-1/2 h-[46%] w-px -translate-1/2 bg-linear-to-b from-brass/0 via-brass/60 to-brass/0" />
-            <span className="relative text-[11px] tracking-[0.28em] text-cream/60 uppercase">[Foto: arquitetura da sede]</span>
           </div>
           <div className="absolute top-[46%] -left-16 flex size-[168px] items-center justify-center rounded-full bg-green">
             <svg viewBox="0 0 200 200" width="156" height="156" aria-hidden="true" className="absolute animate-spin-slow">
