@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-green: #0e2a23;
+  --color-deep: #0a1f1a;
+  --color-brass: #b8935a;
+  --color-bronze: #7a5c2e;
+  --color-cream: #f1ece2;
+  --color-sand: #e7e0d2;
+  --color-ink: #14140f;
+  --color-muted: #55564f;
+
+  --font-serif: 'Bodoni Moda', serif;
+  --font-sans: 'Instrument Sans', 'Helvetica Neue', sans-serif;
+
+  --animate-spin-slow: spin 36s linear infinite;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-cream font-sans text-base/[1.6] text-ink;
+  }
+  a {
+    @apply transition-colors hover:text-brass;
+  }
+}
